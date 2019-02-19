@@ -7,9 +7,9 @@
 
 ## [activerecord-import](https://github.com/zdennis/activerecord-import)
 
-ActiveRecord で Bulk insert するための gem。  
-大量のレコードを一括 insert する場合に使用するとよい。  
-topsic ではイベント登録画面での受験者追加やテスト画面での問題追加に使用。  
+ActiveRecord で Bulk insert するための gem。
+大量のレコードを一括 insert する場合に使用するとよい。
+topsic ではイベント登録画面での受験者追加やテスト画面での問題追加に使用。
 **Apartment を使用している場合「reset_sequence_name」でシーケンスをリセットしてから使用する。これをしないと他スキーマのシーケンスを見に行ってしまうことがある**
 
 ```
@@ -20,15 +20,15 @@ HogeModel.import hoge_datas
 
 ## [acts_as_list](https://github.com/swanandp/acts_as_list)
 
-リスト形式のオブジェクトの並び替えに便利。  
+リスト形式のオブジェクトの並び替えに便利。
 対象のモデル（テーブル）には並び順を表すカラム（デフォルトは position）が必要。
 
 ## [amoeba](https://github.com/amoeba-rb/amoeba)
 
-モデルの複製時に関連モデルも含めて複製してくれる。  
+モデルの複製時に関連モデルも含めて複製してくれる。
 amoeba は「アメーバ」。その増殖性から gem の名前の由来となっている。
 
-### 使い方一部
+### 使い方例
 
 ```
 class Post < ActiveRecord::Base
@@ -76,35 +76,40 @@ Excel 出力を簡単に実装できる。
 
 ## [draper](https://github.com/drapergem/draper)
 
-> Draper は Rails のプレゼンテーション層の役割を担う gem です。  
+> Draper は Rails のプレゼンテーション層の役割を担う gem です。
 > http://ruby-rails.hatenadiary.com/entry/20150415/1429031791
 
 使うと View がスッキリ書ける。
 
 ## [gretel](https://github.com/lassebunk/gretel)
 
-パンくずリストの gem。  
+パンくずリストの gem。
 パンくずリストの実装が各所に散らばることなく config/breadcrumbs.rb に集約できるのが良い。
 
 ## [kaminari](https://github.com/kaminari/kaminari)
 
-ページネーションの gem。  
+ページネーションの gem。
 便利だが変わったことをしようとすると結構はまる。
 
 ## [pundit](https://github.com/varvet/pundit)
 
 権限管理の gem。
 
-- Controller に対応する Policy ファイルを作成し、その中にアクション（Public メソッド）ごとの権限設定を記述する。(「app/policies」配下などに格納）。  
+- Controller に対応する Policy ファイルを作成し、その中にアクション（Public メソッド）ごとの権限設定を記述する。(「app/policies」配下などに格納）。
   例）UsersController であれば UserPolicy。
 - Policy クラスの中ではクラスレベルでの権限設定はもちろんレコードレベルでの権限設定（自分のレコードのみ更新できるなど）もできる。権限設定を Policy にまとめることでコードがスッキリする。
-- アクションに対する権限設定のメソッド名は、「Controller のアクション名　+　?　」。  
+- アクションに対する権限設定のメソッド名は、「Controller のアクション名　+　?　」。
   例）new アクションであれば、「new?」。
+- viewで権限に応じてボタンの表示制御をしたい場合など
+```
+- if policy(@curent_user).export_csv?
+  = hoge_button(:hoge)
+```
 
 ## [ransack](https://github.com/activerecord-hackery/ransack)
 
-検索を簡単に実装できる gem。  
-「属性名 + [matcher](https://github.com/activerecord-hackery/ransack#search-matchers)」の形の検索であれば、ほぼ view のみで検索が実装できる。  
+検索を簡単に実装できる gem。
+「属性名 + [matcher](https://github.com/activerecord-hackery/ransack#search-matchers)」の形の検索であれば、ほぼ view のみで検索が実装できる。
 matcher で対応できない検索でも、 [Ransackers](https://github.com/activerecord-hackery/ransack/wiki/Using-Ransackers) メソッドを使えば、Arel を用いたある程度複雑な検索も実装する事ができる。
 が、本当に複雑な検索の場合、潔く ransack を使わない実装を考えたほうが早い場合も多い（個人的には複雑になりそうだったらすぐ生 SQL にしている）。
 
