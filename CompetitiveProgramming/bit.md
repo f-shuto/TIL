@@ -13,6 +13,8 @@ irb(main):013:0> 10.to_s(2)
 
 ### 下から i ビット目がゼロかどうかを判別
 
+- AtCoder Beginner Contest 079 の 「C - Train Ticket」が理解にちょうどいい
+
 ```
 > x & (1<<i)
 => 0の場合は下からiビット目はゼロ
