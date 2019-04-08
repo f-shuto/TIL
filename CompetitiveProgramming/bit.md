@@ -11,9 +11,7 @@ irb(main):013:0> 10.to_s(2)
 => "1010"
 ```
 
-### 下から i ビット目がゼロかどうかを判別
-
-- AtCoder Beginner Contest 079 の 「C - Train Ticket」が理解にちょうどいい
+## 下から i ビット目がゼロかどうかを判別
 
 ```
 > x & (1<<i)
@@ -27,3 +25,8 @@ irb(main):014:0> 10 & (1<<1)
 irb(main):015:0> 10 & (1<<2)
 => 0
 ```
+
+### 問題
+
+- AtCoder Beginner Contest 079 C - Train Ticket
+- AtCoder Beginner Contest 080 C - Shopping Street
