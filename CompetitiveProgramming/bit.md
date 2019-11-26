@@ -31,5 +31,6 @@ irb(main):015:0> 10 & (1<<2)
 - [AtCoder Beginner Contest 080 C - Shopping Street](https://atcoder.jp/contests/abc080/tasks/abc080_c)
 - [AtCoder Beginner Contest 104 C - All Green](https://atcoder.jp/contests/abc104/tasks/abc104_c)
 - [AtCoder Beginner Contest 128 C - Switches](https://atcoder.jp/contests/abc128/submissions/6968835)
+- [Codeforces A. Dawid and Bags of Candies](https://codeforces.com/problemset/problem/1230/A)
 
 
